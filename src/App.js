@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import Header from "./components/Header";
+import Body from "./components/Body";
 // React.createElement => Object => HTMLElement when rendering
 
 // const heading = React.createElement(
@@ -33,7 +34,7 @@ import ReactDOM from "react-dom/client";
 // JSX - HTML like syntax and not HTML in JS
 // JSX is transpiled to JS code by Babel. Parcel manages it. Babel is a JS compiler. Following line gets converted to React.createElement.
 const jsxHeading = <h1 id="heading">Namaste React using JSX!</h1>;
-console.log(jsxHeading); // It is same as React.createElement. It prints out the object.
+// console.log(jsxHeading); // It is same as React.createElement. It prints out the object.
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -59,4 +60,13 @@ const HeadingComponent = () => {
   );
 };
 
-root.render(<HeadingComponent />);
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
+root.render(<AppLayout />);
